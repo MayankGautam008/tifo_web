@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tifo.in/sitemap.xml
