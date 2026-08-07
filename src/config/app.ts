@@ -1,7 +1,7 @@
 // Application-level configuration
 // Update PLATFORM_URL when the TIFO app is ready for launch
 export const config = {
-  PLATFORM_URL: 'https://tifoindia.onrender.com', // Replace with actual app URL when available
+  PLATFORM_URL: 'https://tifoindia.app', // Updated custom domain
   COMPANY_EMAIL: 'hello@tifo.in',
   COMPANY_PHONE: '+91 XXXXX XXXXX',
   COMPANY_ADDRESS: 'India',
