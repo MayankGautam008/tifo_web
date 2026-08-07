@@ -27,6 +27,7 @@ const navItems = [
   { label: 'Ecosystem', href: '/restaurant-partners', children: [
     { label: 'Restaurant Partners', href: '/restaurant-partners' },
     { label: 'For Students', href: '/students' },
+    { label: 'Student Ambassador', href: '/student-ambassador' },
     { label: 'For Professionals', href: '/professionals' },
   ]},
   { label: 'More', href: '/media', children: [

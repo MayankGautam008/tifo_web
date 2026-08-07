@@ -29,6 +29,11 @@ const Contact = lazy(() => import('./pages/Contact'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
 const Terms = lazy(() => import('./pages/Terms'))
 
+// Student Ambassador Pages
+const StudentAmbassador = lazy(() => import('./pages/StudentAmbassador'))
+const StudentAmbassadorRegister = lazy(() => import('./pages/StudentAmbassadorRegister'))
+const StudentAmbassadorSuccess = lazy(() => import('./pages/StudentAmbassadorSuccess'))
+
 function PageLoader() {
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -92,6 +97,9 @@ function AppLayout() {
           <Route path="/media" element={<Media />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/student-ambassador" element={<StudentAmbassador />} />
+          <Route path="/student-ambassador/register" element={<StudentAmbassadorRegister />} />
+          <Route path="/student-ambassador/success" element={<StudentAmbassadorSuccess />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
