@@ -3,6 +3,25 @@ import { Link } from 'react-router-dom'
 import { ExternalLink, ArrowRight, MapPin, Mail } from 'lucide-react'
 import { config } from '../../config/app'
 
+const InstagramIcon = ({ size = 12, className = '' }: { size?: number; className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+)
+
 const footerLinks = {
   Company: [
     { label: 'About TIFO', href: '/about' },
@@ -70,10 +89,10 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-2.5 mb-4" aria-label="TIFO Home">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden"
                 style={{ background: '#F5F0E8', border: '1px solid rgba(193,68,14,0.20)' }}>
-                <img src="/tifo-logo.png" alt="TIFO Logo" className="w-8 h-8 object-contain"
+                <img src="/tifo-logo.svg" alt="TIFO Logo" className="w-8 h-8 object-contain"
                   onError={(e) => {
                     const img = e.currentTarget as HTMLImageElement
-                    if (!img.src.endsWith('.svg')) { img.src = '/tifo-logo.svg' }
+                    if (!img.src.endsWith('.png')) { img.src = '/tifo-logo.png' }
                     else {
                       img.style.display = 'none'
                       const p = img.parentElement
@@ -99,6 +118,12 @@ export default function Footer() {
                 style={{ color: '#6B6560' }}>
                 <Mail size={12} className="text-orange-500" />
                 {config.COMPANY_EMAIL}
+              </a>
+              <a href={config.SOCIAL.instagram} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs hover:text-orange-400 transition-colors"
+                style={{ color: '#6B6560' }}>
+                <InstagramIcon size={12} className="text-orange-500" />
+                Instagram (@tifoindia)
               </a>
             </div>
           </div>

@@ -96,12 +96,12 @@ export default function Navbar() {
               <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden"
                 style={{ background: '#F5F0E8', border: '1.5px solid rgba(193,68,14,0.18)', boxShadow: '0 2px 8px rgba(193,68,14,0.12)' }}>
                 <img
-                  src="/tifo-logo.png"
+                  src="/tifo-logo.svg"
                   alt="TIFO Logo"
                   className="w-8 h-8 object-contain"
                   onError={(e) => {
                     const img = e.currentTarget as HTMLImageElement
-                    if (!img.src.endsWith('.svg')) { img.src = '/tifo-logo.svg' }
+                    if (!img.src.endsWith('.png')) { img.src = '/tifo-logo.png' }
                     else {
                       img.style.display = 'none'
                       const p = img.parentElement

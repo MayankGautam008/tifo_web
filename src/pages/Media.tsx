@@ -95,8 +95,21 @@ export default function MediaPage() {
           <SectionHeader badge="Brand Assets" title="Logo &" titleHighlight="Brand Guidelines" />
           <FadeIn>
             <div className="glass rounded-2xl p-8 text-center">
-              <div className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden" style={{ background: '#F5F0E8' }}>
-                <img src="/tifo-logo.png" alt="TIFO Logo" className="w-16 h-16 object-contain" />
+              <div className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden p-2" style={{ background: '#F5F0E8', border: '1.5px solid rgba(193,68,14,0.18)' }}>
+                <img
+                  src="/tifo-logo.svg"
+                  alt="TIFO Logo"
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    const img = e.currentTarget as HTMLImageElement
+                    if (!img.src.endsWith('.png')) { img.src = '/tifo-logo.png' }
+                    else {
+                      img.style.display = 'none'
+                      const p = img.parentElement
+                      if (p) p.innerHTML = '<span style="font-family:var(--font-display);font-weight:900;font-size:28px;color:#C1440E;">T</span>'
+                    }
+                  }}
+                />
               </div>
               <p className="text-sm text-gray-400 mb-6 mx-auto" style={{ maxWidth: '500px' }}>
                 Official brand assets including the TIFO logo, color palette, and usage guidelines are available for verified media and partner use. Please contact us to request access.
