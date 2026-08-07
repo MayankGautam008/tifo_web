@@ -2,7 +2,7 @@
 // Update PLATFORM_URL when the TIFO app is ready for launch
 export const config = {
   PLATFORM_URL: 'https://tifoindia.app', // TIFO Application platform URL
-  COMPANY_EMAIL: 'mayank.work0008@gmail.com',
+  COMPANY_EMAIL: 'onlycash419@gmail.com',
   COMPANY_PHONE: '+91 XXXXX XXXXX',
   COMPANY_ADDRESS: 'Lucknow, UP, India',
   SOCIAL: {
