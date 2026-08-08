@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation, ScrollRestoration } from 're
 import { HelmetProvider } from 'react-helmet-async'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
+import StudentAmbassadorModal from './components/ui/StudentAmbassadorModal'
 
 // Lazy load all pages for performance
 const Home = lazy(() => import('./pages/Home'))
@@ -74,6 +75,7 @@ function AppLayout() {
     <>
       <ScrollToTop />
       <Navbar />
+      <StudentAmbassadorModal />
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Home />} />

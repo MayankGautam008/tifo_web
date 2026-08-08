@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown, ExternalLink } from 'lucide-react'
 import { config } from '../../config/app'
+import NotificationBell from './NotificationBell'
 
 const navItems = [
   { label: 'Company', href: '/about', children: [
@@ -175,6 +176,7 @@ export default function Navbar() {
 
           {/* ── CTA ── */}
           <div className="hidden lg:flex items-center gap-3">
+            <NotificationBell />
             <Link
               to="/contact"
               className="text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-200"
@@ -195,16 +197,19 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* ── Mobile Menu Button ── */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg transition-all duration-200"
-            style={{ color: '#4A4038' }}
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          {/* ── Mobile Right Actions ── */}
+          <div className="flex lg:hidden items-center gap-2">
+            <NotificationBell />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg transition-all duration-200"
+              style={{ color: '#4A4038' }}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </div>
 

@@ -7,6 +7,7 @@ import fs from 'fs'
 import dotenv from 'dotenv'
 import { connectDB } from './config/database.js'
 import ambassadorRoutes from './routes/ambassador.routes.js'
+import notificationRoutes from './routes/notification.routes.js'
 
 dotenv.config()
 
@@ -64,6 +65,7 @@ app.use('/uploads', express.static(uploadDir))
 
 // API Routes
 app.use('/api/ambassadors', limiter, ambassadorRoutes)
+app.use('/api/notifications', notificationRoutes)
 
 // Health Check
 app.get('/api/health', (_req, res) => {
